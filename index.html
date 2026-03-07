@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manikanta Vasana | AI/ML Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #8C1515;
+      --red-light: #b01e1e;
+      --dark: #1a1a2e;
+      --mid: #16213e;
+      --accent: #0f3460;
+      --highlight: #e94560;
+      --text: #e0e0e0;
+      --text-muted: #a0a0b0;
+      --card: #1e2a45;
+      --border: #2a3a5c;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(26,26,46,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-brand {
+      font-size: 1.1rem; font-weight: 700;
+      color: white; text-decoration: none;
+    }
+    .nav-brand span { color: var(--highlight); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none;
+      font-size: 0.9rem; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: white; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--mid) 50%, var(--accent) 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(140,21,21,0.15) 0%, transparent 60%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(233,69,96,0.15);
+      border: 1px solid rgba(233,69,96,0.3);
+      color: var(--highlight);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800; color: white;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .hero h1 span { color: var(--highlight); }
+    .hero-subtitle {
+      font-size: 1.1rem; color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+    .hero-institution {
+      font-size: 0.95rem;
+      color: #7a8ab0;
+      margin-bottom: 2rem;
+    }
+    .hero-desc {
+      font-size: 1rem; color: var(--text-muted);
+      max-width: 600px; margin: 0 auto 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 0.75rem 2rem; border-radius: 8px;
+      font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: var(--highlight); color: white;
+      border: 2px solid var(--highlight);
+    }
+    .btn-primary:hover { background: #c73652; border-color: #c73652; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: white;
+      border: 2px solid var(--border);
+    }
+    .btn-outline:hover { border-color: white; transform: translateY(-2px); }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.8rem; letter-spacing: 3px;
+      color: var(--highlight); text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800; color: white;
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      color: var(--text-muted); max-width: 600px;
+      margin-bottom: 3rem; font-size: 1rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--mid); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: start;
+    }
+    @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-text p { color: var(--text-muted); margin-bottom: 1rem; }
+    .skills-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .skill-tag {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.6rem 1rem;
+      font-size: 0.85rem; color: var(--text-muted);
+      text-align: center;
+    }
+    .skill-tag strong { display: block; color: white; margin-bottom: 0.2rem; font-size: 0.8rem; }
+
+    /* ── PORTFOLIO ── */
+    #portfolio { background: var(--dark); }
+    .artifact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.5rem;
+      margin-bottom: 2rem;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .artifact-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--highlight);
+    }
+    .artifact-card:hover {
+      border-color: rgba(233,69,96,0.4);
+      transform: translateY(-3px);
+    }
+    .artifact-number {
+      font-size: 0.75rem; letter-spacing: 2px;
+      color: var(--highlight); text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .artifact-title {
+      font-size: 1.4rem; font-weight: 700;
+      color: white; margin-bottom: 0.3rem;
+    }
+    .artifact-subtitle {
+      font-size: 0.9rem; color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+    .artifact-body { color: var(--text-muted); margin-bottom: 1.5rem; }
+    .artifact-body p { margin-bottom: 0.8rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .tag {
+      background: rgba(233,69,96,0.1);
+      border: 1px solid rgba(233,69,96,0.2);
+      color: #e9a0aa; border-radius: 50px;
+      padding: 0.25rem 0.8rem; font-size: 0.8rem;
+    }
+    .artifact-meta {
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem; color: var(--text-muted);
+    }
+    .artifact-meta span strong { color: white; }
+
+    /* ── TIMELINE EMBED ── */
+    .timeline-section {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 2rem;
+      margin-top: 1.5rem;
+    }
+    .timeline-item {
+      display: flex; gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-year {
+      min-width: 80px; font-weight: 700;
+      color: var(--highlight); font-size: 0.9rem;
+      padding-top: 0.1rem;
+    }
+    .timeline-content strong { color: white; display: block; margin-bottom: 0.2rem; }
+    .timeline-content p { font-size: 0.88rem; color: var(--text-muted); }
+
+    /* ── REFLECTION ── */
+    #reflection { background: var(--mid); }
+    .reflection-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.5rem;
+    }
+    .reflection-card p { color: var(--text-muted); margin-bottom: 1rem; }
+    .reflection-card p:last-child { margin-bottom: 0; }
+    blockquote {
+      border-left: 3px solid var(--highlight);
+      padding-left: 1.5rem; margin: 1.5rem 0;
+      color: #c0c8d8; font-style: italic;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--dark); text-align: center; }
+    .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; color: var(--text-muted);
+      text-decoration: none; font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .contact-link:hover { border-color: var(--highlight); color: white; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--mid);
+      border-top: 1px solid var(--border);
+      padding: 2rem; text-align: center;
+      color: var(--text-muted); font-size: 0.85rem;
+    }
+    footer a { color: var(--highlight); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">MV <span>//</span> Portfolio</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#reflection">Reflection</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🎓 AIML-500 · Indiana Wesleyan University</div>
+    <h1>Manikanta <span>Vasana</span></h1>
+    <p class="hero-subtitle">AI/ML Graduate Student · Responsible AI Advocate · Problem Solver</p>
+    <p class="hero-institution">Machine Learning Fundamentals · Instructor: Marvin Hunt</p>
+    <p class="hero-desc">
+      Building expertise at the intersection of artificial intelligence, 
+      data-driven decision making, and human-centered design. 
+      Passionate about AI that is not just technically sound — but genuinely useful.
+    </p>
+    <div class="hero-btns">
+      <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+      <a href="https://github.com/manikantavasana" class="btn btn-outline" target="_blank">GitHub Profile</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">Background</p>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I am a graduate student in Machine Learning Fundamentals at Indiana Wesleyan University, 
+          developing skills across the technical and leadership dimensions of AI/ML work. 
+          My focus is on understanding not just how AI systems are built, but how they are 
+          adopted, led, and sustained in real organizational contexts.
+        </p>
+        <p>
+          I bring a cross-functional mindset to AI work — bridging the gap between technical 
+          development and the people and processes that determine whether AI actually delivers value. 
+          I believe that responsible, human-centered AI is not a constraint on innovation — 
+          it is a condition for it.
+        </p>
+        <p>
+          Outside of coursework, I am actively building hands-on experience with generative AI 
+          tools, prompt engineering, and design thinking — skills that I believe will define 
+          the next generation of AI/ML professionals.
+        </p>
+      </div>
+      <div>
+        <div class="skills-grid">
+          <div class="skill-tag"><strong>Machine Learning</strong>Fundamentals & Concepts</div>
+          <div class="skill-tag"><strong>Generative AI</strong>Claude, ChatGPT, Gemini</div>
+          <div class="skill-tag"><strong>Prompt Engineering</strong>LLM Interaction Design</div>
+          <div class="skill-tag"><strong>Design Thinking</strong>Human-Centered Approach</div>
+          <div class="skill-tag"><strong>Change Leadership</strong>AI/ML Integration</div>
+          <div class="skill-tag"><strong>Technical Writing</strong>Mixed Audiences</div>
+          <div class="skill-tag"><strong>Bot Building</strong>Chatbase · Mizou</div>
+          <div class="skill-tag"><strong>Research & Synthesis</strong>APA · Critical Analysis</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <p class="section-label">Work Samples</p>
+    <h2 class="section-title">Portfolio Artifacts</h2>
+    <p class="section-desc">
+      A curated collection of work from AIML-500, demonstrating research ability, 
+      technical skill, and human-centered thinking.
+    </p>
+
+    <!-- ARTIFACT 1 -->
+    <div class="artifact-card" id="artifact1">
+      <p class="artifact-number">Artifact 01</p>
+      <h3 class="artifact-title">The Evolution of Artificial Intelligence</h3>
+      <p class="artifact-subtitle">A Research-Based Historical Timeline · 1950s to Present</p>
+
+      <div class="artifact-body">
+        <p>
+          This artifact traces the full arc of Artificial Intelligence development — 
+          from Alan Turing's foundational 1950 paper and the Dartmouth Conference of 1956, 
+          through two AI Winters caused by hardware limitations and funding collapses, 
+          to the deep learning revolution of 2012 and the emergence of large language 
+          models and generative AI in the 2020s.
+        </p>
+        <p>
+          It was created through original research and synthesis of multiple credible sources, 
+          with independent analysis of the technical, financial, and organizational forces 
+          that have shaped the field. The work reflects not just what happened in AI history, 
+          but why — and what that history means for practitioners working in the field today.
+        </p>
+        <p><strong style="color:white;">Why this matters to employers:</strong></p>
+        <p>
+          Understanding AI history is directly relevant to anyone making decisions about 
+          AI adoption, investment, or strategy. Leaders who understand why the field stalled 
+          before are better positioned to avoid repeating those conditions. This artifact 
+          demonstrates research capability, analytical thinking, and the ability to 
+          communicate complex technical history to both technical and non-technical audiences.
+        </p>
+      </div>
+
+      <div class="tags">
+        <span class="tag">AI/ML History</span>
+        <span class="tag">Research & Synthesis</span>
+        <span class="tag">Technical Writing</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">Generative AI</span>
+        <span class="tag">APA Citation</span>
+      </div>
+
+      <!-- MINI TIMELINE -->
+      <div class="timeline-section">
+        <div class="timeline-item">
+          <div class="timeline-year">1950</div>
+          <div class="timeline-content">
+            <strong>Turing's Question</strong>
+            <p>Alan Turing publishes "Computing Machinery and Intelligence," proposing the Turing Test and asking whether machines can think.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1956</div>
+          <div class="timeline-content">
+            <strong>AI is Born — Dartmouth Conference</strong>
+            <p>John McCarthy coins the term "Artificial Intelligence." Early optimism runs high — researchers predict human-level AI within a decade.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1970s</div>
+          <div class="timeline-content">
+            <strong>First AI Winter</strong>
+            <p>Early systems prove too brittle for real-world use. The Lighthill Report triggers funding cuts in the UK and US. Progress stalls.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1980s</div>
+          <div class="timeline-content">
+            <strong>Expert Systems & Second Winter</strong>
+            <p>Rule-based expert systems briefly revive interest, but prove expensive and inflexible. A second AI winter follows by the late 1980s.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2012</div>
+          <div class="timeline-content">
+            <strong>The AlexNet Moment</strong>
+            <p>Geoffrey Hinton's AlexNet wins ImageNet by a record margin. Nvidia GPU hardware finally enables the deep learning theories that had existed for decades.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2017</div>
+          <div class="timeline-content">
+            <strong>Attention Is All You Need</strong>
+            <p>Google researchers publish the Transformer architecture — the foundation of GPT, BERT, and all modern large language models.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2022–Present</div>
+          <div class="timeline-content">
+            <strong>The Generative AI Era</strong>
+            <p>ChatGPT, Claude, Gemini, and Llama represent a new category of AI — generative systems capable of producing novel text, code, and images at scale.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-meta">
+        <span><strong>Course:</strong> AIML-500-01N1G</span>
+        <span><strong>Institution:</strong> Indiana Wesleyan University</span>
+        <span><strong>Instructor:</strong> Marvin Hunt</span>
+        <span><strong>Date:</strong> March 2026</span>
+      </div>
+    </div>
+
+    <!-- ARTIFACT 2 PLACEHOLDER -->
+    <div class="artifact-card" id="artifact2" style="opacity:0.5;">
+      <p class="artifact-number">Artifact 02 — Coming Soon</p>
+      <h3 class="artifact-title">WellGuide: AI Wellness Chatbot</h3>
+      <p class="artifact-subtitle">Built using Design Thinking · Mizou.com</p>
+      <div class="tags">
+        <span class="tag">Bot Building</span>
+        <span class="tag">Design Thinking</span>
+        <span class="tag">Responsible AI</span>
+        <span class="tag">UX Design</span>
+      </div>
+    </div>
+
+    <!-- ARTIFACT 3 PLACEHOLDER -->
+    <div class="artifact-card" id="artifact3" style="opacity:0.5;">
+      <p class="artifact-number">Artifact 03 — Coming Soon</p>
+      <h3 class="artifact-title">Leadership & Change Management Reflection</h3>
+      <p class="artifact-subtitle">AI/ML Integration Leadership Self-Assessment</p>
+      <div class="tags">
+        <span class="tag">Change Leadership</span>
+        <span class="tag">Self-Assessment</span>
+        <span class="tag">Growth Mindset</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- REFLECTION -->
+<section id="reflection">
+  <div class="container">
+    <p class="section-label">Portfolio Reflection</p>
+    <h2 class="section-title">Artifact 1 Reflection</h2>
+    <div class="reflection-card">
+      <p>
+        For my first portfolio artifact, I selected the AI and ML Timeline created during 
+        Workshop 1 of AIML-500. My intended audience for this portfolio is future employers 
+        and collaborators in the AI/ML field — professionals who want to assess not just 
+        what I know technically, but how I think, communicate, and situate myself within 
+        the broader field.
+      </p>
+      <blockquote>
+        "I chose the timeline because it demonstrates something a resume cannot easily show: 
+        the ability to take a large, complex body of knowledge, organize it meaningfully, 
+        and present it in a way that is accessible to different kinds of readers."
+      </blockquote>
+      <p>
+        In AI/ML roles, explaining complex systems to non-technical stakeholders is a genuine 
+        professional skill — and this artifact is evidence of it. Presenting this work for a 
+        professional audience required me to think beyond the academic context in which it was 
+        created. I added audience-facing framing to connect the historical analysis to 
+        practical, real-world decision-making — shifting the question from "what did I do?" 
+        to "why would someone else care about what I did?"
+      </p>
+      <p>
+        I selected GitHub Pages as my portfolio platform because it signals technical 
+        credibility to employers in the AI/ML field in a way that other platforms cannot. 
+        A portfolio hosted on GitHub demonstrates that I am comfortable working in 
+        technical environments — which is itself a relevant signal for the roles I am 
+        pursuing.
+      </p>
+      <p>
+        Going forward, I plan to add artifacts from the AI Lab (WellGuide chatbot) and 
+        the Leadership Discussion workshop, building a portfolio that reflects both technical 
+        capability and the communication, design thinking, and self-aware leadership skills 
+        that the AI/ML field increasingly demands.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Connect With Me</h2>
+    <p class="section-desc" style="margin: 0 auto 1rem;">
+      Open to conversations about AI/ML, learning opportunities, and collaboration.
+    </p>
+    <div class="contact-links">
+      <a href="https://github.com/manikantavasana" class="contact-link" target="_blank">
+        ⌥ GitHub
+      </a>
+      <a href="mailto:manikanta.vasana@mymail.indwes.edu" class="contact-link">
+        ✉ Email
+      </a>
+      <a href="https://linkedin.com/in/manikantavasana" class="contact-link" target="_blank">
+        in LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    © 2026 Manikanta Vasana · 
+    <a href="https://github.com/manikantavasana/manikantavasana.github.io" target="_blank">View Source on GitHub</a> · 
+    Built for AIML-500 · Indiana Wesleyan University
+  </p>
+</footer>
+
+</body>
+</html>
