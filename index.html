@@ -6,514 +6,232 @@
   <title>Manikanta Vasana | AI/ML Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0b0e13;
-      --surface:   #13181f;
-      --surface2:  #1b2230;
-      --border:    #232c3a;
-      --accent:    #c8a96e;
-      --accent2:   #7eb8d4;
-      --text:      #e8ecf0;
-      --muted:     #7a8899;
-      --danger:    #e05c5c;
-      --serif:     'DM Serif Display', Georgia, serif;
-      --sans:      'DM Sans', system-ui, sans-serif;
-      --radius:    12px;
-      --transition: 0.25s ease;
+      --bg:        #f8fbff;
+      --bg2:       #eef4fc;
+      --surface:   #ffffff;
+      --surface2:  #e0f0ff;
+      --border:    #bfdbfe;
+      --border2:   #d1e3f8;
+      --accent:    #0369a1;
+      --accent2:   #0ea5e9;
+      --accentlt:  #e0f2fe;
+      --text:      #0f172a;
+      --muted:     #475569;
+      --muted2:    #94a3b8;
+      --mono:      'JetBrains Mono', 'Courier New', monospace;
+      --sans:      'Inter', system-ui, sans-serif;
+      --radius:    8px;
+      --radius-lg: 12px;
+      --transition: 0.2s ease;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--sans);
+      font-family: var(--mono);
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
-      font-size: 16px;
+      font-size: 15px;
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(11,14,19,0.92);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(248,251,255,0.94);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
+      border-bottom: 1px solid var(--border2);
+      padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 54px;
     }
-    .nav-brand {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-    }
+    .nav-brand { font-family: var(--mono); font-size: 0.85rem; font-weight: 700; color: var(--accent); text-decoration: none; letter-spacing: 0.04em; }
+    .nav-brand span { color: var(--muted2); font-weight: 400; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: color var(--transition);
-    }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; font-family: var(--mono); transition: color var(--transition); }
+    .nav-links a::before { content: './'; color: var(--muted2); }
     .nav-links a:hover { color: var(--accent); }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
-      min-height: 92vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 5rem 2rem 4rem;
-      position: relative;
-      overflow: hidden;
+      min-height: 90vh; display: flex; flex-direction: column;
+      align-items: flex-start; justify-content: center;
+      padding: 6rem 2.5rem 4rem; max-width: 900px; margin: 0 auto; position: relative;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,110,0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(126,184,212,0.06) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.1s ease forwards;
-    }
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 7vw, 5rem);
-      line-height: 1.1;
-      color: var(--text);
-      margin-bottom: 1rem;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.25s ease forwards;
-    }
-    .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 0.75rem;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.4s ease forwards;
-    }
-    .hero-course {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.5s ease forwards;
-    }
-    .hero-desc {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.6s ease forwards;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.75s ease forwards;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.7rem 1.6rem;
-      border-radius: 6px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all var(--transition);
-      letter-spacing: 0.02em;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #0b0e13;
-    }
-    .btn-primary:hover { background: #d9bb82; transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .hero-prompt { font-size: 0.72rem; font-weight: 500; color: var(--accent2); font-family: var(--mono); letter-spacing: 0.06em; margin-bottom: 1.2rem; opacity: 0; animation: fadeUp 0.6s 0.1s ease forwards; }
+    .hero-prompt::before { content: '> '; color: var(--muted2); }
+    .hero h1 { font-family: var(--mono); font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 0.5rem; letter-spacing: -0.02em; opacity: 0; animation: fadeUp 0.6s 0.2s ease forwards; }
+    .hero h1 span.accent { color: var(--accent); }
+    .hero-cursor { display: inline-block; width: 3px; height: 0.85em; background: var(--accent); margin-left: 4px; vertical-align: middle; animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .hero-sub { font-size: 0.85rem; color: var(--muted); font-family: var(--mono); margin-bottom: 0.5rem; opacity: 0; animation: fadeUp 0.6s 0.35s ease forwards; }
+    .hero-sub::before { content: '// '; color: var(--muted2); }
+    .hero-course { font-size: 0.75rem; color: var(--muted2); font-family: var(--mono); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.6s 0.45s ease forwards; }
+    .hero-course::before { content: '// '; color: var(--muted2); }
+    .hero-desc { font-size: 0.875rem; color: var(--muted); max-width: 580px; margin-bottom: 2.5rem; font-family: var(--sans); font-weight: 300; line-height: 1.8; border-left: 3px solid var(--border); padding-left: 1rem; opacity: 0; animation: fadeUp 0.6s 0.55s ease forwards; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.6s 0.7s ease forwards; }
+    .hero-stats { display: flex; gap: 2.5rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border2); width: 100%; opacity: 0; animation: fadeUp 0.6s 0.85s ease forwards; }
+    .stat-num { font-size: 1.5rem; font-weight: 700; color: var(--accent); font-family: var(--mono); }
+    .stat-label { font-size: 0.68rem; color: var(--muted2); font-family: var(--mono); letter-spacing: 0.06em; }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* ── SECTION WRAPPER ── */
-    section { padding: 5rem 2rem; }
-    .container { max-width: 960px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .section-intro {
-      color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 3rem;
-      font-weight: 300;
-    }
-    hr.divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 3.5rem 0;
-    }
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.4rem; border-radius: var(--radius); font-size: 0.78rem; font-weight: 600; font-family: var(--mono); text-decoration: none; transition: all var(--transition); letter-spacing: 0.04em; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #0284c7; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); background: var(--accentlt); transform: translateY(-1px); }
 
-    /* ── ABOUT ── */
-    #about { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    .about-text p { color: var(--muted); font-weight: 300; margin-bottom: 1rem; font-size: 0.975rem; }
-    .about-text strong { color: var(--text); font-weight: 500; }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-    }
-    .skill-chip {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 0.9rem;
-      font-size: 0.8rem;
-    }
-    .skill-chip .skill-name { color: var(--text); font-weight: 500; display: block; }
-    .skill-chip .skill-cat { color: var(--muted); font-size: 0.72rem; }
+    /* SECTION */
+    section { padding: 5rem 2.5rem; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.5rem; font-family: var(--mono); }
+    .section-label::before { content: '/* '; color: var(--muted2); }
+    .section-label::after  { content: ' */'; color: var(--muted2); }
+    .section-title { font-family: var(--mono); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.75rem; letter-spacing: -0.02em; color: var(--text); }
+    .section-intro { color: var(--muted); max-width: 540px; margin-bottom: 3rem; font-size: 0.875rem; font-family: var(--sans); font-weight: 300; line-height: 1.8; }
 
-    /* ── PORTFOLIO ── */
+    /* ABOUT */
+    #about { background: var(--surface); border-top: 1px solid var(--border2); border-bottom: 1px solid var(--border2); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+    .about-text p { color: var(--muted); font-weight: 300; margin-bottom: 1rem; font-size: 0.875rem; font-family: var(--sans); line-height: 1.8; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .skill-chip { background: var(--bg); border: 1px solid var(--border2); border-radius: var(--radius); padding: 0.6rem 0.85rem; transition: border-color var(--transition), background var(--transition); }
+    .skill-chip:hover { border-color: var(--accent); background: var(--accentlt); }
+    .skill-chip .skill-name { color: var(--text); font-weight: 600; display: block; font-size: 0.75rem; font-family: var(--mono); }
+    .skill-chip .skill-cat { color: var(--muted2); font-size: 0.68rem; font-family: var(--mono); }
+
+    /* PORTFOLIO */
     #portfolio { background: var(--bg); }
-    .artifact-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 2.5rem;
-      transition: border-color var(--transition), transform var(--transition);
-    }
-    .artifact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .artifact-header {
-      padding: 2rem 2rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
-    .artifact-number {
-      font-family: var(--serif);
-      font-size: 3rem;
-      line-height: 1;
-      color: var(--border);
-      flex-shrink: 0;
-      min-width: 2.5rem;
-    }
+    .artifact-card { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem; transition: border-color var(--transition), box-shadow var(--transition); }
+    .artifact-card:hover { border-color: var(--accent); box-shadow: 0 4px 24px rgba(3,105,161,0.08); }
+    .artifact-header { padding: 1.75rem 2rem 1.5rem; border-bottom: 1px solid var(--border2); display: flex; align-items: flex-start; gap: 1.5rem; background: var(--bg2); }
+    .artifact-number { font-family: var(--mono); font-size: 0.7rem; font-weight: 700; color: var(--accent); background: var(--accentlt); border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.6rem; letter-spacing: 0.06em; flex-shrink: 0; margin-top: 0.2rem; }
     .artifact-meta { flex: 1; }
-    .artifact-badge {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      margin-bottom: 0.6rem;
-    }
-    .badge-live { background: rgba(200,169,110,0.15); color: var(--accent); }
-    .badge-new  { background: rgba(126,184,212,0.15); color: var(--accent2); }
-    .badge-soon { background: rgba(122,136,153,0.15); color: var(--muted); }
-    .artifact-title {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      line-height: 1.25;
-      margin-bottom: 0.3rem;
-    }
-    .artifact-subtitle { color: var(--muted); font-size: 0.875rem; }
-    .artifact-body { padding: 2rem; }
-    .artifact-intro { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: 300; }
+    .artifact-badge { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.18rem 0.55rem; border-radius: 4px; margin-bottom: 0.5rem; font-family: var(--mono); }
+    .badge-live { background: #dcfce7; color: #166534; }
+    .badge-new  { background: var(--accentlt); color: var(--accent); }
+    .badge-soon { background: #f1f5f9; color: var(--muted2); }
+    .artifact-title { font-family: var(--mono); font-size: 1.25rem; font-weight: 700; line-height: 1.25; margin-bottom: 0.3rem; color: var(--text); letter-spacing: -0.01em; }
+    .artifact-subtitle { color: var(--muted2); font-size: 0.78rem; font-family: var(--mono); }
+    .artifact-body { padding: 1.75rem 2rem; }
+    .artifact-intro { color: var(--muted); font-size: 0.875rem; margin-bottom: 1.5rem; font-family: var(--sans); font-weight: 300; line-height: 1.8; }
 
-    /* info grid */
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .info-block {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem 1.2rem;
-    }
-    .info-block-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-    }
-    .info-block p { font-size: 0.875rem; color: var(--muted); font-weight: 300; }
-    .info-block p strong { color: var(--text); font-weight: 500; }
+    /* live bar */
+    .live-bar { display: flex; align-items: center; gap: 1rem; background: var(--accentlt); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.7rem 1rem; margin-bottom: 1.5rem; }
+    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .live-bar-text { font-size: 0.72rem; color: var(--accent); font-family: var(--mono); font-weight: 500; flex: 1; }
+    .live-bar-link { font-size: 0.72rem; color: var(--accent); font-family: var(--mono); text-decoration: none; font-weight: 600; border: 1px solid var(--border); padding: 0.25rem 0.65rem; border-radius: 4px; background: var(--surface); transition: background var(--transition), color var(--transition); }
+    .live-bar-link:hover { background: var(--accent); color: #fff; }
 
     /* tags */
-    .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .tag {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.72rem;
-      font-weight: 500;
-      padding: 0.25rem 0.65rem;
-      border-radius: 4px;
-      letter-spacing: 0.04em;
-    }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .tag { background: var(--bg2); border: 1px solid var(--border2); color: var(--accent); font-size: 0.68rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 4px; font-family: var(--mono); letter-spacing: 0.04em; }
 
-    /* value prop */
-    .value-box {
-      background: linear-gradient(135deg, rgba(200,169,110,0.06), rgba(126,184,212,0.04));
-      border: 1px solid rgba(200,169,110,0.2);
-      border-radius: 8px;
-      padding: 1.2rem 1.4rem;
-      margin-bottom: 1.5rem;
-    }
-    .value-box-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-    .value-box p { font-size: 0.9rem; color: var(--muted); font-weight: 300; }
+    /* info grid */
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .info-block { background: var(--bg); border: 1px solid var(--border2); border-radius: var(--radius); padding: 1rem 1.1rem; }
+    .info-block-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; font-family: var(--mono); }
+    .info-block p { font-size: 0.82rem; color: var(--muted); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    .info-block p strong { color: var(--text); font-weight: 600; font-family: var(--mono); font-size: 0.78rem; }
+
+    /* value box */
+    .value-box { background: var(--accentlt); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 1.1rem 1.3rem; margin-bottom: 1.5rem; }
+    .value-box-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; font-family: var(--mono); }
+    .value-box p { font-size: 0.85rem; color: var(--muted); font-family: var(--sans); font-weight: 300; line-height: 1.8; }
 
     /* timeline */
-    .timeline { position: relative; padding-left: 1.5rem; margin-bottom: 1.5rem; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.4rem;
-      bottom: 0.4rem;
-      width: 1px;
-      background: var(--border);
-    }
-    .timeline-item { position: relative; padding: 0.6rem 0 0.6rem 1.2rem; }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -4px;
-      top: 1.1rem;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      border: 2px solid var(--bg);
-    }
-    .timeline-year { font-size: 0.7rem; font-weight: 600; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.15rem; }
-    .timeline-event { font-size: 0.875rem; font-weight: 500; color: var(--text); margin-bottom: 0.1rem; }
-    .timeline-desc { font-size: 0.8rem; color: var(--muted); font-weight: 300; }
+    .timeline { position: relative; padding-left: 1.4rem; margin-bottom: 1.5rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0.5rem; width: 1px; background: var(--border); }
+    .timeline-item { position: relative; padding: 0.5rem 0 0.5rem 1.1rem; }
+    .timeline-item::before { content: ''; position: absolute; left: -4px; top: 1rem; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+    .timeline-year { font-size: 0.65rem; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.1rem; font-family: var(--mono); }
+    .timeline-event { font-size: 0.83rem; font-weight: 600; color: var(--text); margin-bottom: 0.1rem; font-family: var(--mono); }
+    .timeline-desc { font-size: 0.78rem; color: var(--muted); font-family: var(--sans); font-weight: 300; line-height: 1.6; }
 
-    /* wellguide features */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-    .feature-item {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem 1.1rem;
-      display: flex;
-      gap: 0.75rem;
-      align-items: flex-start;
-    }
-    .feature-icon {
-      font-size: 1.2rem;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-    .feature-name { font-size: 0.85rem; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
-    .feature-desc { font-size: 0.78rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
+    /* features */
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .feature-item { background: var(--bg); border: 1px solid var(--border2); border-radius: var(--radius); padding: 0.9rem 1rem; display: flex; gap: 0.75rem; align-items: flex-start; transition: border-color var(--transition); }
+    .feature-item:hover { border-color: var(--accent); }
+    .feature-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .feature-name { font-size: 0.78rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; font-family: var(--mono); }
+    .feature-desc { font-size: 0.75rem; color: var(--muted); font-family: var(--sans); font-weight: 300; line-height: 1.5; }
 
-    /* process steps */
-    .process-steps { counter-reset: step; margin-bottom: 1.5rem; }
-    .process-step {
-      counter-increment: step;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid var(--border);
-    }
+    /* process */
+    .process-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; font-family: var(--mono); }
+    .process-steps { margin-bottom: 1.5rem; }
+    .process-step { display: flex; gap: 1rem; align-items: flex-start; padding: 0.65rem 0; border-bottom: 1px solid var(--border2); }
     .process-step:last-child { border-bottom: none; }
-    .step-num {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 0.1rem;
-    }
-    .step-text { font-size: 0.875rem; color: var(--muted); font-weight: 300; }
-    .step-text strong { color: var(--text); font-weight: 500; }
+    .step-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--accentlt); border: 1px solid var(--border); font-size: 0.65rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; justify-content: center; margin-top: 0.15rem; font-family: var(--mono); }
+    .step-text { font-size: 0.83rem; color: var(--muted); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    .step-text strong { color: var(--text); font-weight: 600; font-family: var(--mono); font-size: 0.78rem; }
 
-    /* artifact coming soon */
-    .artifact-coming {
-      background: var(--surface);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      margin-bottom: 2.5rem;
-      opacity: 0.6;
-    }
-    .artifact-coming .artifact-number { font-family: var(--serif); font-size: 2rem; color: var(--border); margin-bottom: 0.5rem; }
-    .artifact-coming h3 { font-family: var(--serif); font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .artifact-coming p { font-size: 0.875rem; color: var(--muted); }
+    /* artifact footer */
+    .artifact-meta-footer { font-size: 0.72rem; color: var(--muted2); font-family: var(--mono); padding-top: 1rem; border-top: 1px solid var(--border2); margin-top: 0.5rem; }
+    .artifact-meta-footer strong { color: var(--muted); font-weight: 600; }
 
-    /* ── REFLECTION ── */
-    #reflection { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .reflection-card {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .reflection-card h3 {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-    }
-    .reflection-card p { color: var(--muted); font-size: 0.9rem; font-weight: 300; margin-bottom: 0.75rem; }
+    /* coming soon */
+    .artifact-coming { background: var(--surface); border: 1px dashed var(--border2); border-radius: var(--radius-lg); padding: 2rem; text-align: center; margin-bottom: 2rem; opacity: 0.55; }
+    .artifact-coming .num { font-family: var(--mono); font-size: 0.7rem; font-weight: 700; color: var(--accent); background: var(--accentlt); border: 1px solid var(--border); border-radius: 4px; padding: 0.2rem 0.5rem; display: inline-block; margin-bottom: 0.75rem; }
+    .artifact-coming h3 { font-family: var(--mono); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+    .artifact-coming p { font-size: 0.8rem; color: var(--muted2); font-family: var(--mono); }
+
+    /* REFLECTION */
+    #reflection { background: var(--surface); border-top: 1px solid var(--border2); border-bottom: 1px solid var(--border2); }
+    .reflection-card { background: var(--bg); border: 1px solid var(--border2); border-radius: var(--radius-lg); padding: 1.75rem 2rem; margin-bottom: 1.25rem; }
+    .reflection-card h3 { font-family: var(--mono); font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent); letter-spacing: -0.01em; }
+    .reflection-card p { color: var(--muted); font-size: 0.875rem; font-family: var(--sans); font-weight: 300; margin-bottom: 0.75rem; line-height: 1.8; }
     .reflection-card p:last-child { margin-bottom: 0; }
-    blockquote {
-      border-left: 3px solid var(--accent);
-      padding: 0.75rem 1.2rem;
-      margin: 1rem 0;
-      background: rgba(200,169,110,0.05);
-      border-radius: 0 6px 6px 0;
-      font-style: italic;
-      color: var(--text);
-      font-size: 0.9rem;
-    }
+    blockquote { border-left: 3px solid var(--accent); padding: 0.75rem 1.1rem; margin: 1rem 0; background: var(--accentlt); border-radius: 0 6px 6px 0; font-style: italic; color: var(--muted); font-size: 0.85rem; font-family: var(--sans); line-height: 1.8; }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     #contact { background: var(--bg); }
-    .contact-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.6rem 1.2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: all var(--transition);
-    }
-    .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .contact-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .contact-link { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1.1rem; background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius); color: var(--muted); text-decoration: none; font-size: 0.78rem; font-weight: 600; font-family: var(--mono); transition: all var(--transition); }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accentlt); transform: translateY(-1px); }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 1.5rem 2rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
+    /* FOOTER */
+    footer { background: var(--surface); border-top: 1px solid var(--border2); padding: 1.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; color: var(--muted2); font-family: var(--mono); }
+    footer a { color: var(--muted2); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 700px) {
       .about-grid, .info-grid, .feature-grid, .skills-grid { grid-template-columns: 1fr; }
-      .artifact-header { flex-direction: column; gap: 0.5rem; }
-      .artifact-number { font-size: 2rem; }
+      .artifact-header { flex-direction: column; gap: 0.75rem; }
       .nav-links { gap: 1rem; }
+      .hero { padding: 5rem 1.5rem 3rem; }
+      section { padding: 4rem 1.5rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav>
-  <a class="nav-brand" href="#">MV // Portfolio</a>
+  <a class="nav-brand" href="#">manikanta.vasana<span>()</span></a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#reflection">Reflection</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#portfolio">portfolio</a></li>
+    <li><a href="#reflection">reflection</a></li>
+    <li><a href="#contact">contact</a></li>
   </ul>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section class="hero" id="home">
-  <p class="hero-eyebrow">🎓 AIML-500 · Indiana Wesleyan University</p>
-  <h1>Manikanta Vasana</h1>
+  <p class="hero-prompt">AIML-500 · Indiana Wesleyan University</p>
+  <h1>Manikanta<br><span class="accent">Vasana</span><span class="hero-cursor"></span></h1>
   <p class="hero-sub">AI/ML Graduate Student · Responsible AI Advocate · Problem Solver</p>
   <p class="hero-course">Machine Learning Fundamentals · Instructor: Marvin Hunt</p>
   <p class="hero-desc">
@@ -522,15 +240,21 @@
     Passionate about AI that is not just technically sound — but genuinely useful.
   </p>
   <div class="hero-actions">
-    <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
-    <a href="https://github.com/manikantavasana" class="btn btn-outline" target="_blank">GitHub Profile</a>
+    <a href="#portfolio" class="btn btn-primary">view_portfolio()</a>
+    <a href="https://github.com/manikantavasana" class="btn btn-outline" target="_blank">github_profile()</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item"><div class="stat-num">02</div><div class="stat-label">artifacts_live</div></div>
+    <div class="stat-item"><div class="stat-num">2026</div><div class="stat-label">current_year</div></div>
+    <div class="stat-item"><div class="stat-num">IWU</div><div class="stat-label">institution</div></div>
+    <div class="stat-item"><div class="stat-num">AI/ML</div><div class="stat-label">focus_area</div></div>
   </div>
 </section>
 
-<!-- ── ABOUT ── -->
+<!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <p class="section-label">Background</p>
+    <p class="section-label">background</p>
     <h2 class="section-title">About Me</h2>
     <div class="about-grid">
       <div class="about-text">
@@ -560,33 +284,30 @@
   </div>
 </section>
 
-<!-- ── PORTFOLIO ── -->
+<!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="container">
-    <p class="section-label">Work Samples</p>
+    <p class="section-label">work samples</p>
     <h2 class="section-title">Portfolio Artifacts</h2>
-    <p class="section-intro">A curated collection of work from AIML-500, demonstrating research ability,
-    technical skill, and human-centered thinking.</p>
+    <p class="section-intro">A curated collection of work from AIML-500, demonstrating research ability, technical skill, and human-centered thinking.</p>
 
-    <!-- ── ARTIFACT 01 ── -->
+    <!-- ARTIFACT 01 -->
     <div class="artifact-card">
       <div class="artifact-header">
-        <div class="artifact-number">01</div>
+        <div class="artifact-number">artifact_01</div>
         <div class="artifact-meta">
-          <span class="artifact-badge badge-live">Live</span>
+          <span class="artifact-badge badge-live">● live</span>
           <h3 class="artifact-title">The Evolution of Artificial Intelligence</h3>
           <p class="artifact-subtitle">A Research-Based Historical Timeline · 1950s to Present</p>
         </div>
       </div>
       <div class="artifact-body">
         <p class="artifact-intro">
-          This artifact traces the full arc of Artificial Intelligence development —
-          from Alan Turing's foundational 1950 paper and the Dartmouth Conference of 1956,
-          through two AI Winters caused by hardware limitations and funding collapses,
-          to the deep learning revolution of 2012 and the emergence of large language
-          models and generative AI in the 2020s.
+          This artifact traces the full arc of Artificial Intelligence development — from Alan Turing's
+          foundational 1950 paper and the Dartmouth Conference of 1956, through two AI Winters caused
+          by hardware limitations and funding collapses, to the deep learning revolution of 2012 and
+          the emergence of large language models and generative AI in the 2020s.
         </p>
-
         <div class="tag-row">
           <span class="tag">AI/ML History</span>
           <span class="tag">Research &amp; Synthesis</span>
@@ -595,7 +316,6 @@
           <span class="tag">Generative AI</span>
           <span class="tag">APA Citation</span>
         </div>
-
         <div class="info-grid">
           <div class="info-block">
             <div class="info-block-label">Objective</div>
@@ -607,16 +327,13 @@
           </div>
           <div class="info-block">
             <div class="info-block-label">Tools &amp; Technologies</div>
-            <p><strong>Research:</strong> Academic databases, IWU library resources<br>
-               <strong>Writing:</strong> Microsoft Word, APA 7th edition<br>
-               <strong>AI Support:</strong> Claude (Anthropic)</p>
+            <p><strong>Research:</strong> Academic databases, IWU library<br><strong>Writing:</strong> Microsoft Word, APA 7th ed.<br><strong>AI Support:</strong> Claude (Anthropic)</p>
           </div>
           <div class="info-block">
             <div class="info-block-label">Unique Value</div>
             <p>Goes beyond listing events to explain <em>why</em> the field stalled and accelerated — connecting historical patterns to practical decisions AI practitioners face today.</p>
           </div>
         </div>
-
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-year">1950</div>
@@ -654,52 +371,39 @@
             <div class="timeline-desc">ChatGPT, Claude, Gemini, and Llama represent a new category of AI — generative systems capable of producing novel text, code, and images at scale.</div>
           </div>
         </div>
-
         <div class="value-box">
           <div class="value-box-label">Why This Matters to Employers</div>
           <p>Understanding AI history is directly relevant to anyone making decisions about AI adoption, investment, or strategy. Leaders who understand why the field stalled before are better positioned to avoid repeating those conditions. This artifact demonstrates research capability, analytical thinking, and the ability to communicate complex technical history to both technical and non-technical audiences.</p>
         </div>
-
-        <p style="font-size:0.8rem;color:var(--muted);">
-          <strong style="color:var(--text);">Course:</strong> AIML-500-01N1G &nbsp;·&nbsp;
-          <strong style="color:var(--text);">Institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp;
-          <strong style="color:var(--text);">Instructor:</strong> Marvin Hunt &nbsp;·&nbsp;
-          <strong style="color:var(--text);">Date:</strong> March 2026
-        </p>
+        <div class="artifact-meta-footer">
+          <strong>course:</strong> AIML-500-01N1G &nbsp;·&nbsp; <strong>institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp; <strong>instructor:</strong> Marvin Hunt &nbsp;·&nbsp; <strong>date:</strong> March 2026
+        </div>
       </div>
     </div>
 
-    <!-- ── ARTIFACT 02 ── -->
+    <!-- ARTIFACT 02 -->
     <div class="artifact-card">
       <div class="artifact-header">
-        <div class="artifact-number">02</div>
+        <div class="artifact-number">artifact_02</div>
         <div class="artifact-meta">
-          <span class="artifact-badge badge-new">New</span>
+          <span class="artifact-badge badge-new">◆ new</span>
           <h3 class="artifact-title">WellGuide: Sleep Insights</h3>
-          <p class="artifact-subtitle">AI Wellness Chatbot · Built using Design Thinking · Mizou.com (Free Tier)</p>
+          <p class="artifact-subtitle">AI Wellness Chatbot · Design Thinking · Mizou.com (Free Tier)</p>
         </div>
       </div>
       <div class="artifact-body">
         <p class="artifact-intro">
-          WellGuide: Sleep Insights is an AI-powered wellness chatbot focused specifically on
-          sleep health — designed and deployed on Mizou.com, a purpose-built platform for
-          creating responsible, educational AI chatbots. The bot was built from scratch using
-          a structured design thinking process — starting with empathy mapping, moving through
-          problem definition and ideation, and culminating in a working prototype tested with
-          real user interactions. It demonstrates how generative AI can be shaped into a
-          purposeful, human-centered tool with a clear, responsible scope.
+          WellGuide: Sleep Insights is an AI-powered wellness chatbot focused specifically on sleep health —
+          designed and deployed on Mizou.com, a purpose-built platform for creating responsible, educational
+          AI chatbots. Built from scratch using a structured design thinking process — from empathy mapping
+          through to a working prototype tested with real user interactions. It demonstrates how generative
+          AI can be shaped into a purposeful, human-centered tool with a clear, responsible scope.
         </p>
-
-        <div style="margin-bottom:1.5rem;">
-          <a href="https://mizou.com/login-thread?ID=2rdIwnSWVBotvTvEZMsdeSEtdznOpxLXTclnSS1HQ2I-119588"
-             target="_blank"
-             class="btn btn-primary"
-             style="font-size:0.8rem;padding:0.5rem 1.2rem;">
-            🤖 Try the Live Bot
-          </a>
-          <span style="margin-left:0.75rem;font-size:0.75rem;color:var(--muted);">Hosted on Mizou.com · Free Tier</span>
+        <div class="live-bar">
+          <div class="live-dot"></div>
+          <span class="live-bar-text">bot deployed · mizou.com · free tier · available now</span>
+          <a href="https://mizou.com/login-thread?ID=2rdIwnSWVBotvTvEZMsdeSEtdznOpxLXTclnSS1HQ2I-119588" target="_blank" class="live-bar-link">try_bot() →</a>
         </div>
-
         <div class="tag-row">
           <span class="tag">Bot Building</span>
           <span class="tag">Design Thinking</span>
@@ -710,190 +414,114 @@
           <span class="tag">Generative AI</span>
           <span class="tag">UX Design</span>
         </div>
-
         <div class="info-grid">
           <div class="info-block">
             <div class="info-block-label">Objective</div>
-            <p>Design and deploy a responsible AI chatbot that provides accessible, supportive wellness guidance — demonstrating practical application of design thinking and responsible AI principles in a real deployment environment.</p>
+            <p>Design and deploy a responsible AI chatbot providing accessible, supportive sleep wellness guidance — demonstrating practical application of design thinking and responsible AI principles in a real deployment environment.</p>
           </div>
           <div class="info-block">
             <div class="info-block-label">Target Audience</div>
-            <p>Graduate students and early-career professionals navigating academic pressure, work-life balance, and stress management — users who need immediate, accessible support without clinical overhead.</p>
+            <p>Graduate students and early-career professionals navigating academic pressure, work-life balance, and poor sleep patterns — users who need accessible support without clinical overhead.</p>
           </div>
-        </div>
-
-        <div class="info-grid">
           <div class="info-block">
             <div class="info-block-label">Tools &amp; Technologies</div>
-            <p>
-              <strong>Platform:</strong> Mizou.com (AI bot builder)<br>
-              <strong>Methodology:</strong> Stanford d.school Design Thinking<br>
-              <strong>AI Framework:</strong> Prompt engineering &amp; persona design<br>
-              <strong>Documentation:</strong> Microsoft Word, APA 7th edition
-            </p>
+            <p><strong>Platform:</strong> Mizou.com (AI bot builder)<br><strong>Method:</strong> Stanford d.school Design Thinking<br><strong>Framework:</strong> Prompt engineering &amp; persona design<br><strong>Docs:</strong> Microsoft Word, APA 7th ed.</p>
           </div>
           <div class="info-block">
             <div class="info-block-label">Relevance</div>
-            <p>As organizations integrate AI into human-facing services, professionals who can design <em>responsible</em> AI experiences — not just deploy them — will be in high demand. WellGuide demonstrates exactly that capability.</p>
+            <p>Professionals who can design <em>responsible</em> AI experiences — not just deploy them — will be in high demand. WellGuide demonstrates exactly that combination of capability and judgment.</p>
           </div>
         </div>
-
         <div class="feature-grid">
           <div class="feature-item">
             <div class="feature-icon">🌙</div>
-            <div>
-              <div class="feature-name">Sleep Check-Ins</div>
-              <div class="feature-desc">Guided prompts that help users reflect on sleep quality, duration, and patterns without clinical framing.</div>
-            </div>
+            <div><div class="feature-name">Sleep Check-Ins</div><div class="feature-desc">Guided prompts helping users reflect on sleep quality, duration, and patterns without clinical framing.</div></div>
           </div>
           <div class="feature-item">
             <div class="feature-icon">🛡️</div>
-            <div>
-              <div class="feature-name">Responsible AI Guardrails</div>
-              <div class="feature-desc">Deliberately scoped to avoid medical diagnosis. Bot redirects to professional resources when conversations approach clinical territory.</div>
-            </div>
+            <div><div class="feature-name">Responsible AI Guardrails</div><div class="feature-desc">Scoped to avoid medical diagnosis. Redirects to professional resources when conversations approach clinical territory.</div></div>
           </div>
           <div class="feature-item">
             <div class="feature-icon">💬</div>
-            <div>
-              <div class="feature-name">Conversational Persona</div>
-              <div class="feature-desc">Custom persona designed to feel calm and supportive — avoiding robotic tone while maintaining appropriate professional boundaries.</div>
-            </div>
+            <div><div class="feature-name">Conversational Persona</div><div class="feature-desc">Warm, calm persona designed to feel supportive while maintaining appropriate professional boundaries.</div></div>
           </div>
           <div class="feature-item">
             <div class="feature-icon">🎯</div>
-            <div>
-              <div class="feature-name">Sleep Hygiene Tips</div>
-              <div class="feature-desc">Context-aware suggestions for wind-down routines, sleep environment improvements, and evidence-based sleep hygiene practices.</div>
-            </div>
+            <div><div class="feature-name">Sleep Hygiene Tips</div><div class="feature-desc">Context-aware suggestions for wind-down routines and evidence-based sleep hygiene practices.</div></div>
           </div>
         </div>
-
-        <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;">Design Thinking Process</p>
+        <div class="process-label">// design_thinking_process</div>
         <div class="process-steps">
-          <div class="process-step">
-            <div class="step-num">1</div>
-            <div class="step-text"><strong>Empathize</strong> — Identified the target user group (graduate students under academic and professional stress) and mapped their pain points, unmet needs, and current coping behaviors.</div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">2</div>
-            <div class="step-text"><strong>Define</strong> — Synthesized empathy findings into a clear problem statement: users need accessible, judgment-free wellness support that fits into an already-busy schedule.</div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">3</div>
-            <div class="step-text"><strong>Ideate</strong> — Explored multiple chatbot concepts before converging on a guided check-in model with resource recommendations, selected for its low barrier to engagement and clear scope boundaries.</div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">4</div>
-            <div class="step-text"><strong>Prototype</strong> — Built the bot on Mizou.com, crafting the persona, conversation flow, and prompt engineering from scratch. Defined explicit boundaries for responsible AI behavior.</div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">5</div>
-            <div class="step-text"><strong>Test &amp; Reflect</strong> — Ran the bot through sample user scenarios, identified conversation gaps, refined the persona tone, and documented lessons learned about responsible AI design in human-facing applications.</div>
-          </div>
+          <div class="process-step"><div class="step-num">1</div><div class="step-text"><strong>Empathize</strong> — Identified the target user group and mapped their pain points, unmet needs, and current coping behaviors around sleep.</div></div>
+          <div class="process-step"><div class="step-num">2</div><div class="step-text"><strong>Define</strong> — Synthesized empathy findings into a clear problem statement: users need accessible, judgment-free sleep support that fits into a busy schedule.</div></div>
+          <div class="process-step"><div class="step-num">3</div><div class="step-text"><strong>Ideate</strong> — Explored multiple chatbot concepts before converging on a guided check-in model with sleep hygiene recommendations and clear scope boundaries.</div></div>
+          <div class="process-step"><div class="step-num">4</div><div class="step-text"><strong>Prototype</strong> — Built the bot on Mizou.com, crafting the persona, conversation flow, and prompt engineering from scratch with explicit responsible AI boundaries.</div></div>
+          <div class="process-step"><div class="step-num">5</div><div class="step-text"><strong>Test &amp; Reflect</strong> — Ran the bot through sample user scenarios, identified gaps, refined persona tone, and documented responsible AI design lessons learned.</div></div>
         </div>
-
         <div class="value-box">
           <div class="value-box-label">Value Proposition</div>
           <p>WellGuide demonstrates that building AI tools responsibly requires more than technical setup — it requires deliberate design thinking, ethical scoping, and user empathy. This artifact shows I can do all three. For employers integrating AI into customer-facing or employee-facing contexts, that combination of technical capability and human-centered judgment is precisely what separates thoughtful AI practitioners from those who simply deploy tools without considering their impact.</p>
         </div>
-
-        <p style="font-size:0.8rem;color:var(--muted);">
-          <strong style="color:var(--text);">Course:</strong> AIML-500-01N1G &nbsp;·&nbsp;
-          <strong style="color:var(--text);">Institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp;
-          <strong style="color:var(--text);">Instructor:</strong> Marvin Hunt &nbsp;·&nbsp;
-          <strong style="color:var(--text);">Date:</strong> March 2026
-        </p>
+        <div class="artifact-meta-footer">
+          <strong>course:</strong> AIML-500-01N1G &nbsp;·&nbsp; <strong>institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp; <strong>instructor:</strong> Marvin Hunt &nbsp;·&nbsp; <strong>date:</strong> March 2026
+        </div>
       </div>
     </div>
 
-    <!-- ── ARTIFACT 03 (coming soon) ── -->
+    <!-- ARTIFACT 03 coming soon -->
     <div class="artifact-coming">
-      <div class="artifact-number">03</div>
+      <div class="num">artifact_03</div>
       <h3>Leadership &amp; Change Management Reflection</h3>
-      <p>AI/ML Integration Leadership Self-Assessment · Coming Soon</p>
+      <p>AI/ML Integration Leadership Self-Assessment · coming_soon()</p>
     </div>
 
   </div>
 </section>
 
-<!-- ── REFLECTION ── -->
+<!-- REFLECTION -->
 <section id="reflection">
   <div class="container">
-    <p class="section-label">Portfolio Reflection</p>
+    <p class="section-label">portfolio reflection</p>
     <h2 class="section-title">Artifact Reflections</h2>
     <p class="section-intro">Critical reflection on each artifact — what I built, why it matters, and what I learned.</p>
 
-    <!-- Artifact 1 Reflection -->
     <div class="reflection-card">
-      <h3>Artifact 1 — The Evolution of Artificial Intelligence</h3>
-      <p>For my first portfolio artifact, I selected the AI and ML Timeline created during
-      Workshop 1 of AIML-500. My intended audience for this portfolio is future employers
-      and collaborators in the AI/ML field — professionals who want to assess not just
-      what I know technically, but how I think, communicate, and situate myself within
-      the broader field.</p>
-      <blockquote>
-        "I chose the timeline because it demonstrates something a resume cannot easily show:
-        the ability to take a large, complex body of knowledge, organize it meaningfully,
-        and present it in a way that is accessible to different kinds of readers."
-      </blockquote>
-      <p>In AI/ML roles, explaining complex systems to non-technical stakeholders is a genuine
-      professional skill — and this artifact is evidence of it. Presenting this work for a
-      professional audience required me to think beyond the academic context in which it was
-      created. I added audience-facing framing to connect the historical analysis to
-      practical, real-world decision-making — shifting the question from "what did I do?"
-      to "why would someone else care about what I did?"</p>
-      <p>I selected GitHub Pages as my portfolio platform because it signals technical
-      credibility to employers in the AI/ML field in a way that other platforms cannot.
-      A portfolio hosted on GitHub demonstrates that I am comfortable working in
-      technical environments — which is itself a relevant signal for the roles I am pursuing.</p>
+      <h3>// artifact_01 — The Evolution of Artificial Intelligence</h3>
+      <p>For my first portfolio artifact, I selected the AI and ML Timeline created during Workshop 1 of AIML-500. My intended audience is future employers and collaborators in the AI/ML field — professionals who want to assess not just what I know technically, but how I think, communicate, and situate myself within the broader field.</p>
+      <blockquote>"I chose the timeline because it demonstrates something a resume cannot easily show: the ability to take a large, complex body of knowledge, organize it meaningfully, and present it in a way that is accessible to different kinds of readers."</blockquote>
+      <p>Presenting this work for a professional audience required me to think beyond the academic context in which it was created. I added audience-facing framing to connect the historical analysis to practical, real-world decision-making — shifting the question from "what did I do?" to "why would someone else care about what I did?"</p>
+      <p>I selected GitHub Pages as my portfolio platform because it signals technical credibility to employers in the AI/ML field. A portfolio hosted on GitHub demonstrates comfort with technical environments — which is itself a relevant signal for the roles I am pursuing.</p>
     </div>
 
     <div class="reflection-card">
-      <h3>Artifact 2 — WellGuide: Sleep Insights</h3>
-      <p>For my second artifact, I chose the WellGuide: Sleep Insights chatbot project because it demonstrates
-      a completely different dimension of AI/ML competency than the first artifact. Where the
-      timeline shows I can research and synthesize, WellGuide shows I can build and design.
-      My intended audience remains the same — employers and collaborators in AI/ML — but this
-      artifact speaks more directly to those evaluating practical, applied AI skills.</p>
-      <blockquote>
-        "The most important lesson from building WellGuide: Sleep Insights was that responsible AI design
-        is not just about what the bot can do — it is about what you deliberately choose
-        not to let it do."
-      </blockquote>
-      <p>Customizing this artifact for a professional audience meant going beyond describing
-      the bot and showing the thinking behind it. I restructured the artifact entry to surface
-      the design thinking process explicitly, because employers in AI integration roles care
-      deeply about methodology — not just outcomes. The five-stage design thinking walkthrough
-      makes that process visible in a way a simple project description would not.</p>
-      <p>Focusing specifically on sleep health — rather than general wellness — taught me the
-      value of a well-scoped AI tool. A narrower focus made the bot more useful, more
-      trustworthy, and easier to design responsibly. That experience of navigating scope
-      decisions is something I now consider one of my most transferable skills in AI design.</p>
+      <h3>// artifact_02 — WellGuide: Sleep Insights</h3>
+      <p>For my second artifact, I chose the WellGuide: Sleep Insights chatbot because it demonstrates a completely different dimension of AI/ML competency. Where the timeline shows I can research and synthesize, WellGuide shows I can build and design. This artifact speaks more directly to employers evaluating practical, applied AI skills.</p>
+      <blockquote>"The most important lesson from building WellGuide was that responsible AI design is not just about what the bot can do — it is about what you deliberately choose not to let it do."</blockquote>
+      <p>Customizing this artifact for a professional audience meant surfacing the design thinking process explicitly, because employers in AI integration roles care deeply about methodology — not just outcomes. The five-stage walkthrough makes that process visible in a way a simple project description would not.</p>
+      <p>Focusing specifically on sleep health — rather than general wellness — taught me the value of a well-scoped AI tool. A narrower focus made the bot more useful, more trustworthy, and easier to design responsibly. Navigating those scope decisions is now one of my most transferable skills in AI design.</p>
     </div>
 
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <p class="section-label">Get In Touch</p>
+    <p class="section-label">get in touch</p>
     <h2 class="section-title">Connect With Me</h2>
     <p class="section-intro">Open to conversations about AI/ML, learning opportunities, and collaboration.</p>
     <div class="contact-links">
-      <a href="https://github.com/manikantavasana" class="contact-link" target="_blank">⌥ GitHub</a>
-      <a href="mailto:manikanta.vasana@mymail.indwes.edu" class="contact-link">✉ Email</a>
-      <a href="https://linkedin.com/in/manikantavasana" class="contact-link" target="_blank">in LinkedIn</a>
+      <a href="https://github.com/manikantavasana" class="contact-link" target="_blank">github()</a>
+      <a href="mailto:manikanta.vasana@mymail.indwes.edu" class="contact-link">email()</a>
+      <a href="https://linkedin.com/in/manikantavasana" class="contact-link" target="_blank">linkedin()</a>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
-  © 2026 Manikanta Vasana ·
-  <a href="https://github.com/manikantavasana/manikantavasana.github.io" style="color:var(--muted);text-decoration:none;" target="_blank">View Source on GitHub</a> ·
-  Built for AIML-500 · Indiana Wesleyan University
+  <span>© 2026 Manikanta Vasana · AIML-500 · Indiana Wesleyan University</span>
+  <a href="https://github.com/manikantavasana/manikantavasana.github.io" target="_blank">view_source() →</a>
 </footer>
 
 </body>
