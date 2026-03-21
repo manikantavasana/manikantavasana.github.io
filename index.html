@@ -245,7 +245,7 @@
     <a href="https://github.com/manikantavasana" class="btn btn-outline" target="_blank">github_profile()</a>
   </div>
   <div class="hero-stats">
-    <div class="stat-item"><div class="stat-num">02</div><div class="stat-label">artifacts_live</div></div>
+    <div class="stat-item"><div class="stat-num">03</div><div class="stat-label">artifacts_live</div></div>
     <div class="stat-item"><div class="stat-num">2026</div><div class="stat-label">current_year</div></div>
     <div class="stat-item"><div class="stat-num">IWU</div><div class="stat-label">institution</div></div>
     <div class="stat-item"><div class="stat-num">AI/ML</div><div class="stat-label">focus_area</div></div>
@@ -469,11 +469,87 @@
       </div>
     </div>
 
-    <!-- ARTIFACT 03 coming soon -->
-    <div class="artifact-coming">
-      <div class="num">artifact_03</div>
-      <h3>Leadership &amp; Change Management Reflection</h3>
-      <p>AI/ML Integration Leadership Self-Assessment · coming_soon()</p>
+    <!-- ARTIFACT 03 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-number">artifact_03</div>
+        <div class="artifact-meta">
+          <span class="artifact-badge badge-new">◆ new</span>
+          <h3 class="artifact-title">How an Agent Learns the Best Actions in Reinforcement Learning</h3>
+          <p class="artifact-subtitle">Group Research Paper · Reinforcement Learning · Tesla FSD Case Study</p>
+        </div>
+      </div>
+      <div class="artifact-body">
+        <p class="artifact-intro">
+          A collaborative group research paper exploring how reinforcement learning agents learn optimal behavior
+          through the observe–act–reward loop. Uses two contrasting case studies — Pac-Man and Tesla Full
+          Self-Driving — to bridge foundational RL theory with a real-world engineering system operating at scale.
+          The paper covers the credit assignment problem, policy formation, value-based learning, policy gradient
+          methods, actor-critic architecture, and the exploration vs. exploitation tradeoff.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Reinforcement Learning</span>
+          <span class="tag">Deep Q-Network (DQN)</span>
+          <span class="tag">Policy Gradient</span>
+          <span class="tag">Actor-Critic</span>
+          <span class="tag">Tesla FSD</span>
+          <span class="tag">Autonomous Driving</span>
+          <span class="tag">Group Research</span>
+          <span class="tag">APA 7th ed.</span>
+        </div>
+        <div class="info-grid">
+          <div class="info-block">
+            <div class="info-block-label">Objective</div>
+            <p>Explain how RL agents learn optimal actions through trial, feedback, and iteration — connecting core algorithm theory to a high-stakes real-world deployment: Tesla's Full Self-Driving system.</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label">Collaborators</div>
+            <p>Manikanta Vasana · Khaleel Abdul · Qasim Ali · Po-Chun Huang · Arvinnd Chowdary Kuchipudi · Won Woo Derek Sohn · Ashok Bollepalli · Iftekhar Ahmed Tarkati Mohammed</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label">Case Studies</div>
+            <p><strong>Pac-Man (DeepMind DQN):</strong> Mastered from raw pixels with zero prior knowledge.<br><strong>Tesla FSD:</strong> Eight-camera state space, continuous action space, real-world policy deployment.</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label">Key References</div>
+            <p><strong>Sutton &amp; Barto (2018):</strong> RL: An Introduction<br><strong>Mnih et al. (2015):</strong> DQN, Nature 518<br><strong>Kiran et al. (2022):</strong> Deep RL for Autonomous Driving, IEEE TITS</p>
+          </div>
+        </div>
+        <div class="process-label">// core_concepts_covered</div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div class="step-text"><strong>The Basic Loop</strong> — State observation → action selection → reward receipt → state transition. The same loop runs in Pac-Man and a city intersection at rush hour.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div class="step-text"><strong>Credit Assignment Problem</strong> — Tracing which earlier actions caused a good outcome later. Tesla FSD must connect a speed reduction six seconds prior to a safe left turn across oncoming traffic.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div class="step-text"><strong>Policy Formation</strong> — The agent's learned mapping from observed states to chosen actions. No rules are programmed; they emerge from millions of training iterations.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div class="step-text"><strong>Value-Based Learning &amp; Policy Gradient</strong> — DQN assigns value to state-action pairs; policy gradient directly adjusts policy parameters. Tesla uses fleet-scale real-world data to refine its policy network.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">5</div>
+            <div class="step-text"><strong>Actor-Critic Architecture</strong> — Actor decides the action; critic scores it. Tesla's simulation infrastructure (billions of virtual miles) is built around this hybrid to learn edge cases without real-world risk.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">6</div>
+            <div class="step-text"><strong>Exploration vs. Exploitation</strong> — Epsilon-greedy balances exploiting known-good actions with occasional random exploration. As training matures, randomness reduces and the agent settles into validated behavior.</div>
+          </div>
+        </div>
+        <div class="value-box">
+          <div class="value-box-label">Why This Matters to Employers</div>
+          <p>Reinforcement learning is behind some of the most commercially valuable AI systems in production today — autonomous vehicles, robotics, recommendation engines, and game-playing agents. This paper demonstrates the ability to explain complex RL mechanics clearly, connect theory to real engineering systems, and collaborate in a group research context — skills directly relevant to roles in ML engineering, AI research, and applied AI product development.</p>
+        </div>
+        <div class="artifact-meta-footer">
+          <strong>course:</strong> AIML-500-01N1G &nbsp;·&nbsp; <strong>institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp; <strong>instructor:</strong> Marvin Hunt &nbsp;·&nbsp; <strong>date:</strong> March 21, 2026
+        </div>
+      </div>
     </div>
 
   </div>
@@ -502,6 +578,14 @@
       <p>Focusing specifically on sleep health rather than general wellness taught me the value of a well-scoped AI tool. A narrower focus made the bot more useful, more trustworthy, and easier to design responsibly. Navigating those scope decisions is now one of my most transferable skills in AI design.</p>
     </div>
 
+    <div class="reflection-card">
+      <h3>// artifact_03 How an Agent Learns the Best Actions in RL</h3>
+      <p>For my third portfolio artifact, I selected the group research paper on Reinforcement Learning submitted for the 3.3 Assignment in AIML-500. My intended audience is employers and collaborators evaluating applied ML knowledge — specifically, whether I can connect foundational algorithm theory to real-world engineering systems rather than just recite textbook definitions.</p>
+      <blockquote>"The Pac-Man and Tesla FSD pairing was deliberate — one is a toy environment most people recognize, the other is one of the most complex RL deployments in production. Holding both together in the same analysis forces you to see what is truly universal about the algorithm."</blockquote>
+      <p>Working in a group of eight shaped this paper in important ways. With multiple contributors, the challenge was not producing content — it was ensuring the paper read as a coherent argument rather than a collection of separate sections. My contribution focused on the structural narrative thread: the idea that Pac-Man and Tesla FSD share not just an algorithm but a philosophy of learning through experience rather than instruction.</p>
+      <p>The credit assignment problem turned out to be the most intellectually rich section to develop. It is easy to describe the basic RL loop, but explaining why connecting a decision made six seconds ago to an outcome two seconds later is genuinely hard — and doing so without losing a non-specialist reader — required careful sequencing. That challenge taught me something practical about communicating ML concepts: the difficulty is rarely the math; it is the causality.</p>
+    </div>
+
   </div>
 </section>
 
@@ -513,7 +597,7 @@
     <p class="section-intro">Open to conversations about AI/ML, learning opportunities, and collaboration.</p>
     <div class="contact-links">
       <a href="https://github.com/manikantavasana" class="contact-link" target="_blank">github()</a>
-      <a href="mailto:manikanta.vasana@mymail.indwes.edu" class="contact-link">email()</a>
+      <a href="/cdn-cgi/l/email-protection#016c606f686a606f75602f776072606f60416c786c60686d2f686f657664722f646574" class="contact-link">email()</a>
       <a href="https://linkedin.com/in/manikantavasana" class="contact-link" target="_blank">linkedin()</a>
     </div>
   </div>
@@ -522,8 +606,4 @@
 <!-- FOOTER -->
 <footer>
   <span>© 2026 Manikanta Vasana · AIML-500 · Indiana Wesleyan University</span>
-  <a href="https://github.com/manikantavasana/manikantavasana.github.io" target="_blank">view_source() →</a>
-</footer>
-
-</body>
-</html>
+  <a href="https://github.com/manikantavasana/manikantavasana.github.io" target="
