@@ -245,7 +245,7 @@
     <a href="https://github.com/manikantavasana" class="btn btn-outline" target="_blank">github_profile()</a>
   </div>
   <div class="hero-stats">
-    <div class="stat-item"><div class="stat-num">03</div><div class="stat-label">artifacts_live</div></div>
+    <div class="stat-item"><div class="stat-num">04</div><div class="stat-label">artifacts_live</div></div>
     <div class="stat-item"><div class="stat-num">2026</div><div class="stat-label">current_year</div></div>
     <div class="stat-item"><div class="stat-num">IWU</div><div class="stat-label">institution</div></div>
     <div class="stat-item"><div class="stat-num">AI/ML</div><div class="stat-label">focus_area</div></div>
@@ -552,6 +552,80 @@
       </div>
     </div>
 
+    <!-- ARTIFACT 04 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-number">artifact_04</div>
+        <div class="artifact-meta">
+          <span class="artifact-badge badge-live">● live</span>
+          <h3 class="artifact-title">Applied ML Decision-Making Under Constraints</h3>
+          <p class="artifact-subtitle">Data Challenge Scenario Coach · Three-Scenario Interactive Session · SchoolAI</p>
+        </div>
+      </div>
+      <div class="artifact-body">
+        <p class="artifact-intro">
+          An interactive, coached AI session working through three progressively harder real-world ML data challenges covering
+          missing data imputation in energy forecasting, data drift in a live fraud detection system, and privacy-constrained
+          feature selection for a high-dimensional recommendation engine. Each scenario required structured reasoning,
+          trade-off analysis, and validation design with real-time feedback from an AI coach evaluating the depth and
+          quality of every decision.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Data Quality</span>
+          <span class="tag">Missing Data</span>
+          <span class="tag">Data Drift</span>
+          <span class="tag">Feature Selection</span>
+          <span class="tag">Privacy-Preserving ML</span>
+          <span class="tag">Fraud Detection</span>
+          <span class="tag">Dimensionality Reduction</span>
+          <span class="tag">Critical Thinking</span>
+        </div>
+        <div class="info-grid">
+          <div class="info-block">
+            <div class="info-block-label">Objective</div>
+            <p>Demonstrate applied ML judgment beyond just conceptual knowledge by working through realistic, constraint-laden data challenges and defending decisions with clear reasoning and trade-off awareness.</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label">Format</div>
+            <p><strong>Platform:</strong> SchoolAI Scenario Coach<br><strong>Structure:</strong> Three escalating scenarios<br><strong>Evaluation:</strong> Real-time AI feedback + instructor review of recorded transcript</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label">Skills Demonstrated</div>
+            <p><strong>Diagnostic thinking:</strong> MAR vs MNAR analysis<br><strong>Systems reasoning:</strong> Drift detection + retraining logic<br><strong>Constraint navigation:</strong> Privacy, latency, quality trade-offs</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label">Tools &amp; Technologies</div>
+            <p><strong>Platform:</strong> SchoolAI (AIML-500 Coach)<br><strong>Concepts:</strong> PSI, KL divergence, MICE, differential privacy, embedding compression<br><strong>Course:</strong> AIML-500-01N1G</p>
+          </div>
+        </div>
+
+        <div class="process-label">// scenario_progression</div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div class="step-text"><strong>Scenario 1: Missing Data (Energy Forecasting)</strong> A 50,000-row dataset predicting monthly energy consumption with missingness ranging from 0.5% to 30% across features, skewed toward older records. Required diagnosing the missingness mechanism (MAR vs MNAR), tiering imputation strategies by severity, designing missingness indicators as model features, and validating imputation quality through simulated holdout experiments.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div class="step-text"><strong>Scenario 2: Data Drift (Real-Time Fraud Detection)</strong> A production fraud scoring system showing precision drops and false positive spikes for new merchant categories and promotional events, with a 48 to 72 hour label delay. Required distinguishing covariate drift from concept drift, selecting a single precision-based retrain trigger metric, designing a label-completeness cutoff to prevent label-delay bias, and building a short-term mitigation strategy using shadow ensembles and rule-based fallbacks.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div class="step-text"><strong>Scenario 3: Privacy-Constrained Feature Selection (Recommendation Engine)</strong> A high-dimensional recommendation system with thousands of sparse categorical features, inferred sensitive attributes, privacy regulations restricting third-party signals, on-device latency requirements, and real-time trend adaptation needs. Required a full privacy audit, staged feature selection, embedding compression, adversarial debiasing, a two-tier on-device and server-side architecture, and population-aggregate trend adaptation that avoids individual data exposure.</div>
+          </div>
+        </div>
+
+        <div class="value-box">
+          <div class="value-box-label">Why This Matters to Employers</div>
+          <p>Real ML work is rarely about picking the right algorithm from a list. It is about making defensible decisions when data is messy, systems are live, constraints are real, and trade-offs are unavoidable. This artifact demonstrates exactly that kind of thinking: the ability to reason through ambiguous, multi-constraint problems out loud, defend choices under probing follow-up questions, and show genuine understanding rather than pattern-matched answers. For employers building or maintaining production ML systems, that kind of applied critical thinking is directly what they need on their teams.</p>
+        </div>
+
+        <div class="artifact-meta-footer">
+          <strong>course:</strong> AIML-500-01N1G &nbsp;·&nbsp; <strong>institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp; <strong>instructor:</strong> Marvin Hunt &nbsp;·&nbsp; <strong>date:</strong> March 28, 2026
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -584,6 +658,15 @@
       <blockquote>"The Pac-Man and Tesla FSD pairing was deliberate one is a toy environment most people recognize, the other is one of the most complex RL deployments in production. Holding both together in the same analysis forces you to see what is truly universal about the algorithm."</blockquote>
       <p>Working in a group of eight shaped this paper in important ways. With multiple contributors, the challenge was not producing content it was ensuring the paper read as a coherent argument rather than a collection of separate sections. My contribution focused on the structural narrative thread: the idea that Pac-Man and Tesla FSD share not just an algorithm but a philosophy of learning through experience rather than instruction.</p>
       <p>The credit assignment problem turned out to be the most intellectually rich section to develop. It is easy to describe the basic RL loop, but explaining why connecting a decision made six seconds ago to an outcome two seconds later is genuinely hard and doing so without losing a non-specialist reader required careful sequencing. That challenge taught me something practical about communicating ML concepts: the difficulty is rarely the math; it is the causality.</p>
+    </div>
+
+    <div class="reflection-card">
+      <h3>// artifact_04 Applied ML Decision-Making Under Constraints</h3>
+      <p>For my fourth portfolio artifact, I selected the Data Challenge Scenario Coach session completed during Workshop 6 of AIML-500. My intended audience is employers and technical hiring teams who want to see not just what I know about machine learning, but how I actually think when the problems get hard and there are no clean textbook answers in sight.</p>
+      <blockquote>"The most honest test of whether you understand something is whether you can defend your decisions under follow-up questioning and not just state them once and move on."</blockquote>
+      <p>What made this activity genuinely valuable for a portfolio is that it is not a static deliverable. It is a recorded thinking process. The coach pushed back on every answer, asked for single metrics instead of hedged ranges, and probed whether I could design a concrete experiment rather than describe one abstractly. That kind of pressure is much closer to what a real technical interview or project review looks like than any paper or quiz.</p>
+      <p>The three scenarios deliberately covered different failure modes in production ML covering missing data, distribution shift, and privacy constraints which meant I could not rely on a single mental framework across all three. Scenario 1 required statistical reasoning about missingness mechanisms. Scenario 2 required systems thinking about live model behavior and delayed feedback loops. Scenario 3 required navigating competing pressures simultaneously: privacy compliance, latency, recommendation quality, and real-time adaptability. Holding all of those constraints in tension and still producing a coherent strategy is a skill that only develops through practice, not memorization.</p>
+      <p>Adapting this for a professional audience meant being explicit about what the artifact actually demonstrates. A transcript of a coaching session looks informal on the surface. But what it contains is structured reasoning, trade-off acknowledgment, and willingness to be corrected and refine which is exactly the kind of thinking that separates practitioners who understand ML from those who have only studied it.</p>
     </div>
 
   </div>
