@@ -204,6 +204,24 @@
     footer a { color: var(--muted2); text-decoration: none; }
     footer a:hover { color: var(--accent); }
 
+    /* VALUE PROPOSITION */
+    .value-prop-block { margin-top: 2rem; background: var(--bg2); border: 1px solid var(--border); border-left: 4px solid var(--accent2); border-radius: var(--radius); padding: 1.3rem 1.5rem; }
+    .value-prop-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.5rem; font-family: var(--mono); }
+    .value-prop-block p { font-size: 0.875rem; color: var(--muted); font-family: var(--sans); font-weight: 300; line-height: 1.8; }
+
+    /* TARGET AUDIENCE */
+    .audience-block { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius); padding: 1.1rem 1.3rem; margin-bottom: 2rem; display: flex; gap: 1rem; align-items: flex-start; }
+    .audience-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .audience-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem; font-family: var(--mono); }
+    .audience-block p { font-size: 0.83rem; color: var(--muted); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+
+    /* REFERENCES */
+    .references-block { background: var(--bg); border: 1px solid var(--border2); border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 1rem; }
+    .references-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted2); margin-bottom: 0.6rem; font-family: var(--mono); }
+    .references-block ul { list-style: none; padding: 0; margin: 0; }
+    .references-block li { font-size: 0.78rem; color: var(--muted); font-family: var(--sans); font-weight: 300; line-height: 1.7; padding-left: 1.4rem; text-indent: -1.4rem; margin-bottom: 0.4rem; }
+    .references-block li:last-child { margin-bottom: 0; }
+
     /* RESPONSIVE */
     @media (max-width: 700px) {
       .about-grid, .info-grid, .feature-grid, .skills-grid { grid-template-columns: 1fr; }
@@ -282,6 +300,12 @@
         <div class="skill-chip"><span class="skill-name">Research &amp; Synthesis</span><span class="skill-cat">APA · Critical Analysis</span></div>
       </div>
     </div>
+
+    <div class="value-prop-block">
+      <div class="value-prop-label">// personal_value_proposition</div>
+      <p>I bridge the gap between machine learning theory and real organizational practice — translating complex AI concepts into decisions that non-technical stakeholders can act on, while maintaining the technical depth that engineering teams respect. As a graduate student with professional experience in backend systems and microservice architecture, I bring both the hands-on credibility and the communication skills that most ML practitioners develop separately, if at all. My goal is to help organizations not just adopt AI, but adopt it responsibly, sustainably, and in ways that actually deliver value to the people it is meant to serve.</p>
+    </div>
+
   </div>
 </section>
 
@@ -291,6 +315,14 @@
     <p class="section-label">work samples</p>
     <h2 class="section-title">Portfolio Artifacts</h2>
     <p class="section-intro">A curated collection of work from AIML-500, demonstrating research ability, technical skill, and human-centered thinking.</p>
+
+    <div class="audience-block">
+      <div class="audience-icon">🎯</div>
+      <div>
+        <div class="audience-label">// target_audience</div>
+        <p>This portfolio is designed for <strong>AI/ML hiring managers, technical recruiters, and team leads</strong> evaluating candidates who can operate at the intersection of technical depth and organizational leadership. It is equally relevant to <strong>academic collaborators and program faculty</strong> assessing applied learning outcomes. Each artifact is framed not just as a course deliverable but as evidence of practical thinking — showing how I approach ambiguous problems, communicate across audiences, and build AI solutions with responsibility and rigor. If you are looking for someone who understands both the algorithm and the impact it has on real people and organizations, this portfolio is for you.</p>
+      </div>
+    </div>
 
     <!-- ARTIFACT 01 -->
     <div class="artifact-card">
@@ -375,6 +407,16 @@
         <div class="value-box">
           <div class="value-box-label">Why This Matters to Employers</div>
           <p>Understanding AI history is directly relevant to anyone making decisions about AI adoption, investment, or strategy. Leaders who understand why the field stalled before are better positioned to avoid repeating those conditions. This artifact demonstrates research capability, analytical thinking, and the ability to communicate complex technical history to both technical and non-technical audiences.</p>
+        </div>
+        <div class="references-block">
+          <div class="references-label">// references</div>
+          <ul>
+            <li>Copeland, B. J. (2023). <em>Artificial intelligence</em>. Encyclopaedia Britannica. https://www.britannica.com/technology/artificial-intelligence</li>
+            <li>Crevier, D. (1993). <em>AI: The tumultuous history of the search for artificial intelligence</em>. Basic Books.</li>
+            <li>LeCun, Y., Bengio, Y., &amp; Hinton, G. (2015). Deep learning. <em>Nature, 521</em>(7553), 436–444. https://doi.org/10.1038/nature14539</li>
+            <li>McCarthy, J., Minsky, M. L., Rochester, N., &amp; Shannon, C. E. (1955). <em>A proposal for the Dartmouth summer research project on artificial intelligence</em>. Dartmouth College.</li>
+            <li>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., &amp; Polosukhin, I. (2017). Attention is all you need. <em>Advances in Neural Information Processing Systems, 30</em>. https://arxiv.org/abs/1706.03762</li>
+          </ul>
         </div>
         <div class="artifact-meta-footer">
           <strong>course:</strong> AIML-500-01N1G &nbsp;·&nbsp; <strong>institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp; <strong>instructor:</strong> Marvin Hunt &nbsp;·&nbsp; <strong>date:</strong> March 2026
@@ -463,6 +505,15 @@
           <div class="value-box-label">Value Proposition</div>
           <p>WellGuide demonstrates that building AI tools responsibly requires more than technical setup it requires deliberate design thinking, ethical scoping, and user empathy. This artifact shows I can do all three. For employers integrating AI into customer-facing or employee-facing contexts, that combination of technical capability and human-centered judgment is precisely what separates thoughtful AI practitioners from those who simply deploy tools without considering their impact.</p>
         </div>
+        <div class="references-block">
+          <div class="references-label">// references</div>
+          <ul>
+            <li>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., &amp; Agarwal, S. (2020). Language models are few-shot learners. <em>Advances in Neural Information Processing Systems, 33</em>, 1877–1901. https://arxiv.org/abs/2005.14165</li>
+            <li>IDEO.org. (2015). <em>The field guide to human-centered design</em>. IDEO.org/Design Kit. https://www.designkit.org/resources/1</li>
+            <li>Johansson-Sköldberg, U., Woodilla, J., &amp; Çetinkaya, M. (2013). Design thinking: Past, present and possible futures. <em>Creativity and Innovation Management, 22</em>(2), 121–146. https://doi.org/10.1111/caim.12023</li>
+            <li>Mizou.com. (2024). <em>Mizou: AI chatbot builder for education</em>. https://mizou.com</li>
+          </ul>
+        </div>
         <div class="artifact-meta-footer">
           <strong>course:</strong> AIML-500-01N1G &nbsp;·&nbsp; <strong>institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp; <strong>instructor:</strong> Marvin Hunt &nbsp;·&nbsp; <strong>date:</strong> March 2026
         </div>
@@ -546,6 +597,14 @@
           <div class="value-box-label">Why This Matters to Employers</div>
           <p>Reinforcement learning is behind some of the most commercially valuable AI systems in production today autonomous vehicles, robotics, recommendation engines, and game-playing agents. This paper demonstrates the ability to explain complex RL mechanics clearly, connect theory to real engineering systems, and collaborate in a group research context skills directly relevant to roles in ML engineering, AI research, and applied AI product development.</p>
         </div>
+        <div class="references-block">
+          <div class="references-label">// references</div>
+          <ul>
+            <li>Kiran, B. R., Sobh, I., Talpaert, V., Mannion, P., Al Sallab, A. A., Yogamani, S., &amp; Pérez, P. (2022). Deep reinforcement learning for autonomous driving: A survey. <em>IEEE Transactions on Intelligent Transportation Systems, 23</em>(6), 4909–4926. https://doi.org/10.1109/TITS.2021.3054625</li>
+            <li>Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., Graves, A., Riedmiller, M., Fidjeland, A. K., Ostrovski, G., Petersen, S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra, D., Legg, S., &amp; Hassabis, D. (2015). Human-level control through deep reinforcement learning. <em>Nature, 518</em>(7540), 529–533. https://doi.org/10.1038/nature14236</li>
+            <li>Sutton, R. S., &amp; Barto, A. G. (2018). <em>Reinforcement learning: An introduction</em> (2nd ed.). MIT Press. https://incompleteideas.net/book/the-book-2nd.html</li>
+          </ul>
+        </div>
         <div class="artifact-meta-footer">
           <strong>course:</strong> AIML-500-01N1G &nbsp;·&nbsp; <strong>institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp; <strong>instructor:</strong> Marvin Hunt &nbsp;·&nbsp; <strong>date:</strong> March 21, 2026
         </div>
@@ -620,6 +679,15 @@
           <p>Real ML work is rarely about picking the right algorithm from a list. It is about making defensible decisions when data is messy, systems are live, constraints are real, and trade-offs are unavoidable. This artifact demonstrates exactly that kind of thinking: the ability to reason through ambiguous, multi-constraint problems out loud, defend choices under probing follow-up questions, and show genuine understanding rather than pattern-matched answers. For employers building or maintaining production ML systems, that kind of applied critical thinking is directly what they need on their teams.</p>
         </div>
 
+        <div class="references-block">
+          <div class="references-label">// references</div>
+          <ul>
+            <li>Dwork, C., &amp; Roth, A. (2014). The algorithmic foundations of differential privacy. <em>Foundations and Trends in Theoretical Computer Science, 9</em>(3–4), 211–407. https://doi.org/10.1561/0400000042</li>
+            <li>Gama, J., Žliobaitė, I., Bifet, A., Pechenizkiy, M., &amp; Bouchachia, A. (2014). A survey on concept drift adaptation. <em>ACM Computing Surveys, 46</em>(4), 1–37. https://doi.org/10.1145/2523813</li>
+            <li>van Buuren, S. (2018). <em>Flexible imputation of missing data</em> (2nd ed.). CRC Press. https://stefvanbuuren.name/fimd/</li>
+            <li>Vabalas, A., Gowen, E., Poliakoff, E., &amp; Casson, A. J. (2019). Machine learning algorithm validation with a limited sample size. <em>PLOS ONE, 14</em>(11), e0224365. https://doi.org/10.1371/journal.pone.0224365</li>
+          </ul>
+        </div>
         <div class="artifact-meta-footer">
           <strong>course:</strong> AIML-500-01N1G &nbsp;·&nbsp; <strong>institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp; <strong>instructor:</strong> Marvin Hunt &nbsp;·&nbsp; <strong>date:</strong> March 28, 2026
         </div>
