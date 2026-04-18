@@ -215,6 +215,14 @@
     .audience-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem; font-family: var(--mono); }
     .audience-block p { font-size: 0.83rem; color: var(--muted); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
 
+    /* KEY TAKEAWAYS */
+    .takeaways-block { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 3px solid #22c55e; border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
+    .takeaways-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #16a34a; margin-bottom: 0.6rem; font-family: var(--mono); }
+    .takeaways-block ul { list-style: none; padding: 0; margin: 0; }
+    .takeaways-block li { font-size: 0.82rem; color: var(--muted); font-family: var(--sans); font-weight: 300; line-height: 1.7; padding-left: 1.2rem; position: relative; margin-bottom: 0.35rem; }
+    .takeaways-block li:last-child { margin-bottom: 0; }
+    .takeaways-block li::before { content: '✓'; position: absolute; left: 0; color: #22c55e; font-size: 0.75rem; font-weight: 700; }
+
     /* REFERENCES */
     .references-block { background: var(--bg); border: 1px solid var(--border2); border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 1rem; }
     .references-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted2); margin-bottom: 0.6rem; font-family: var(--mono); }
@@ -263,7 +271,7 @@
     <a href="https://github.com/manikantavasana" class="btn btn-outline" target="_blank">github_profile()</a>
   </div>
   <div class="hero-stats">
-    <div class="stat-item"><div class="stat-num">04</div><div class="stat-label">artifacts_live</div></div>
+    <div class="stat-item"><div class="stat-num">05</div><div class="stat-label">artifacts_live</div></div>
     <div class="stat-item"><div class="stat-num">2026</div><div class="stat-label">current_year</div></div>
     <div class="stat-item"><div class="stat-num">IWU</div><div class="stat-label">institution</div></div>
     <div class="stat-item"><div class="stat-num">AI/ML</div><div class="stat-label">focus_area</div></div>
@@ -332,7 +340,6 @@
       <div class="artifact-header">
         <div class="artifact-number">artifact_01</div>
         <div class="artifact-meta">
-          <span class="artifact-badge badge-live">● live</span>
           <h3 class="artifact-title">The Evolution of Artificial Intelligence</h3>
           <p class="artifact-subtitle">A Research-Based Historical Timeline · 1950s to Present</p>
         </div>
@@ -410,6 +417,15 @@
         <div class="value-box">
           <div class="value-box-label">Why This Matters to Employers</div>
           <p>Understanding AI history is directly relevant to anyone making decisions about AI adoption, investment, or strategy. Leaders who understand why the field stalled before are better positioned to avoid repeating those conditions. This artifact demonstrates research capability, analytical thinking, and the ability to communicate complex technical history to both technical and non-technical audiences.</p>
+        </div>
+        <div class="takeaways-block">
+          <div class="takeaways-label">// key_takeaways</div>
+          <ul>
+            <li>AI progress is cyclical: understanding why the field stalled twice before helps practitioners anticipate risks in the current wave of development.</li>
+            <li>Hardware, funding, and public expectation shape AI trajectories as much as algorithmic breakthroughs do.</li>
+            <li>The Transformer architecture (2017) was the inflection point that made modern LLMs possible — not just a model improvement but a paradigm shift.</li>
+            <li>Communicating AI history across technical and non-technical audiences is a practical leadership skill, not just academic exercise.</li>
+          </ul>
         </div>
         <div class="references-block">
           <div class="references-label">// references</div>
@@ -508,10 +524,17 @@
           <div class="value-box-label">Value Proposition</div>
           <p>WellGuide demonstrates that building AI tools responsibly requires more than technical setup it requires deliberate design thinking, ethical scoping, and user empathy. This artifact shows I can do all three. For employers integrating AI into customer-facing or employee-facing contexts, that combination of technical capability and human-centered judgment is precisely what separates thoughtful AI practitioners from those who simply deploy tools without considering their impact.</p>
         </div>
-        <div class="references-block">
-          <div class="references-label">// references</div>
+        <div class="takeaways-block">
+          <div class="takeaways-label">// key_takeaways</div>
           <ul>
-            <li>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., &amp; Agarwal, S. (2020). Language models are few-shot learners. <em>Advances in Neural Information Processing Systems, 33</em>, 1877–1901. https://arxiv.org/abs/2005.14165</li>
+            <li>Responsible AI design starts at the scoping stage — deliberately limiting what a chatbot will and will not do is itself a core design decision, not an afterthought.</li>
+            <li>Design thinking gives AI tools a human foundation: empathy mapping and user personas reveal needs that purely technical approaches miss.</li>
+            <li>A narrower, well-defined focus makes an AI tool more trustworthy and easier to evaluate than a broad, generalist one.</li>
+            <li>Deploying to a real platform (Mizou.com) introduced practical constraints around prompt boundaries and user safety that no classroom exercise could replicate.</li>
+          </ul>
+        </div>
+        <div class="references-block">
+          <div class="references-label">// references</div> <em>Advances in Neural Information Processing Systems, 33</em>, 1877–1901. https://arxiv.org/abs/2005.14165</li>
             <li>IDEO.org. (2015). <em>The field guide to human-centered design</em>. IDEO.org/Design Kit. https://www.designkit.org/resources/1</li>
             <li>Johansson-Sköldberg, U., Woodilla, J., &amp; Çetinkaya, M. (2013). Design thinking: Past, present and possible futures. <em>Creativity and Innovation Management, 22</em>(2), 121–146. https://doi.org/10.1111/caim.12023</li>
             <li>Mizou.com. (2024). <em>Mizou: AI chatbot builder for education</em>. https://mizou.com</li>
@@ -600,6 +623,15 @@
           <div class="value-box-label">Why This Matters to Employers</div>
           <p>Reinforcement learning is behind some of the most commercially valuable AI systems in production today autonomous vehicles, robotics, recommendation engines, and game-playing agents. This paper demonstrates the ability to explain complex RL mechanics clearly, connect theory to real engineering systems, and collaborate in a group research context skills directly relevant to roles in ML engineering, AI research, and applied AI product development.</p>
         </div>
+        <div class="takeaways-block">
+          <div class="takeaways-label">// key_takeaways</div>
+          <ul>
+            <li>The credit assignment problem is the core intellectual challenge in RL: connecting a decision made seconds ago to an outcome that arrives later requires careful algorithm design, not just data.</li>
+            <li>The Pac-Man to Tesla FSD pairing reveals what is truly universal about RL — the algorithm scales from toy environments to billion-dollar engineering systems through the same fundamental loop.</li>
+            <li>Collaborative research sharpens argumentation: with eight contributors, maintaining a single coherent thesis required active synthesis, not just aggregation of sections.</li>
+            <li>Simulation at scale (billions of virtual miles) is how production RL systems handle the exploration problem safely — a lesson directly applicable to any high-stakes autonomous deployment.</li>
+          </ul>
+        </div>
         <div class="references-block">
           <div class="references-label">// references</div>
           <ul>
@@ -619,7 +651,6 @@
       <div class="artifact-header">
         <div class="artifact-number">artifact_04</div>
         <div class="artifact-meta">
-          <span class="artifact-badge badge-live">● live</span>
           <h3 class="artifact-title">Applied ML Decision-Making Under Constraints</h3>
           <p class="artifact-subtitle">Data Challenge Scenario Coach · Three-Scenario Interactive Session · SchoolAI</p>
         </div>
@@ -691,8 +722,112 @@
             <li>Vabalas, A., Gowen, E., Poliakoff, E., &amp; Casson, A. J. (2019). Machine learning algorithm validation with a limited sample size. <em>PLOS ONE, 14</em>(11), e0224365. https://doi.org/10.1371/journal.pone.0224365</li>
           </ul>
         </div>
+        <div class="takeaways-block">
+          <div class="takeaways-label">// key_takeaways</div>
+          <ul>
+            <li>Distinguishing covariate drift from concept drift in a live system is a practical skill that textbooks describe but only real scenario practice builds.</li>
+            <li>When data is missing, the mechanism of missingness (MCAR, MAR, MNAR) determines the right imputation strategy — choosing randomly is not neutral, it is a decision with downstream consequences.</li>
+            <li>Privacy constraints and model performance are not always in conflict: thoughtful architecture (on-device vs. server-side split) can satisfy both simultaneously.</li>
+            <li>The most valuable signal in a technical interview is not the first answer — it is how you respond to a follow-up challenge. This session was practice for exactly that.</li>
+          </ul>
+        </div>
         <div class="artifact-meta-footer">
           <strong>course:</strong> AIML-500-01N1G &nbsp;·&nbsp; <strong>institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp; <strong>instructor:</strong> Marvin Hunt &nbsp;·&nbsp; <strong>date:</strong> March 28, 2026
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTIFACT 05 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-number">artifact_05</div>
+        <div class="artifact-meta">
+          <span class="artifact-badge badge-new">◆ new</span>
+          <h3 class="artifact-title">Personal Framework for AI/ML Leadership</h3>
+          <p class="artifact-subtitle">Leadership Development · Change Management · Ethical AI Practice · Capstone</p>
+        </div>
+      </div>
+      <div class="artifact-body">
+        <p class="artifact-intro">
+          A structured personal framework synthesizing growth across the full AIML-500 course into a living leadership document.
+          Built around a mission statement, five core values, measurable objectives, short and long-term action plans,
+          and a built-in evaluation and adaptation cycle. This artifact is the course capstone reflection,
+          connecting technical ML knowledge to the human, organizational, and ethical dimensions of AI leadership.
+        </p>
+        <div class="tag-row">
+          <span class="tag">AI/ML Leadership</span>
+          <span class="tag">Change Management</span>
+          <span class="tag">Ethical AI</span>
+          <span class="tag">Personal Development</span>
+          <span class="tag">Mission &amp; Values</span>
+          <span class="tag">Action Planning</span>
+          <span class="tag">Self-Assessment</span>
+          <span class="tag">Capstone Reflection</span>
+        </div>
+        <div class="info-grid">
+          <div class="info-block">
+            <div class="info-block-label">Objective</div>
+            <p>Synthesize course-wide learning into a coherent personal framework that articulates a clear leadership vision, core values, and a concrete plan for growth as an ethical and effective AI/ML leader.</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label">Framework Components</div>
+            <p><strong>Mission Statement</strong> · <strong>5 Core Values</strong> · <strong>5 Key Objectives</strong> · <strong>Short &amp; Long-Term Action Plans</strong> · <strong>Evaluation &amp; Adaptation Cycle</strong></p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label">Core Values Identified</div>
+            <p>Integrity in Design · Accountability Without Deflection · Continuous and Honest Learning · Human-Centered Judgment · Stewardship of Influence</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label">Unique Value</div>
+            <p>Unlike a resume or project deliverable, this framework reveals how I think about leadership itself — what I am accountable for, how I learn from failure, and what kind of AI practitioner I am actively choosing to become.</p>
+          </div>
+        </div>
+        <div class="process-label">// framework_structure</div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div class="step-text"><strong>Mission Statement</strong> To develop and apply AI/ML capabilities in ways that are technically rigorous, ethically grounded, and genuinely useful to the people and organizations I serve, while building the kind of leadership that others can trust and learn from.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div class="step-text"><strong>Core Values</strong> Five principles identified through course-wide reflection: Integrity in Design (surface assumptions before they cause harm), Accountability Without Deflection (own outcomes not just intent), Continuous and Honest Learning (revise views when evidence calls for it), Human-Centered Judgment (keep wisdom in the loop), and Stewardship of Influence (use technical expertise to clarify, not obscure).</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div class="step-text"><strong>Key Objectives</strong> Five measurable goals: build and apply a bias and fairness checklist to production systems; embed explainability documentation in all ML-adjacent pipelines; complete graduate studies with applied focus; develop cross-functional leadership presence; and maintain a monthly AI governance and regulatory reading habit.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div class="step-text"><strong>Action Plans</strong> Short-term (0–6 months): formalize bias checklist, identify a governance mentor, complete current coursework. Medium-term (6–18 months): present AI/ML topics to mixed audiences internally, map skills against agentic AI trends. Long-term (18+ months): pursue AI ethics certification, mentor newer practitioners, contribute to responsible AI resources.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">5</div>
+            <div class="step-text"><strong>Evaluation and Adaptation</strong> Six-month reviews against all five objectives with honest self-assessment. End-of-term framework updates aligned to new learning. External calibration using annual field reports (e.g., Stanford AI Index). Feedback from colleagues and mentors treated as data, not validation.</div>
+          </div>
+        </div>
+        <div class="value-box">
+          <div class="value-box-label">Why This Matters to Employers</div>
+          <p>Most AI practitioners can describe technical skills. Fewer can articulate a coherent philosophy of leadership — what they are accountable for, how they learn from failure, and how they would handle a system that causes unintended harm. This framework demonstrates that kind of reflective capacity. For employers building AI teams where stakes are real, knowing that a practitioner has thought seriously about these questions — and has a living plan for continuing to do so — is a meaningful signal of professional maturity.</p>
+        </div>
+        <div class="takeaways-block">
+          <div class="takeaways-label">// key_takeaways</div>
+          <ul>
+            <li>Technical competence is the floor of AI leadership, not the ceiling — the frameworks, values, and judgment above it determine real-world impact.</li>
+            <li>The most important course insight: ethical AI failures are usually systemic, not purely technical. Better models without better organizational accountability change little.</li>
+            <li>A personal framework that is never revisited is just a document. The built-in evaluation cycle is what makes it a leadership tool.</li>
+            <li>Naming core values explicitly creates accountability — it becomes harder to act contrary to them once they are written down and visible to yourself and others.</li>
+          </ul>
+        </div>
+        <div class="references-block">
+          <div class="references-label">// references</div>
+          <ul>
+            <li>Blackaby, H. T., Blackaby, R., &amp; King, C. (2011). <em>Experiencing God: Knowing and doing the will of God</em> (Rev. ed.). B&amp;H Publishing Group.</li>
+            <li>Clinton, J. R. (2012). <em>The making of a leader: Recognizing the lessons and stages of leadership development</em> (2nd ed.). NavPress.</li>
+            <li>Stanford University Institute for Human-Centered Artificial Intelligence. (2026). <em>Artificial intelligence index report 2026</em>. https://hai.stanford.edu/ai-index/2026</li>
+          </ul>
+        </div>
+        <div class="artifact-meta-footer">
+          <strong>course:</strong> AIML-500-01N1G &nbsp;·&nbsp; <strong>institution:</strong> Indiana Wesleyan University &nbsp;·&nbsp; <strong>instructor:</strong> Marvin Hunt &nbsp;·&nbsp; <strong>date:</strong> April 18, 2026
         </div>
       </div>
     </div>
@@ -740,10 +875,16 @@
       <p>Adapting this for a professional audience meant being explicit about what the artifact actually demonstrates. A transcript of a coaching session looks informal on the surface. But what it contains is structured reasoning, trade-off acknowledgment, and willingness to be corrected and refine which is exactly the kind of thinking that separates practitioners who understand ML from those who have only studied it.</p>
     </div>
 
+    <div class="reflection-card">
+      <h3>// artifact_05 Personal Framework for AI/ML Leadership</h3>
+      <p>For my fifth and final artifact, I selected the Personal Framework for AI/ML Leadership completed as the capstone of AIML-500. My intended audience is anyone evaluating me not just for technical skills but for the quality of judgment, values, and self-awareness I would bring into a professional or collaborative context. This artifact shows how I think about my own development, not just how I perform on a given task.</p>
+      <blockquote>"Technical competence is the floor of AI leadership, not the ceiling. What sits above it — the judgment, accountability, and ethical reasoning — is what determines whether AI work does any actual good."</blockquote>
+      <p>What I found most valuable in building this framework was being forced to move from general statements about values to specific, testable commitments. It is easy to say you care about responsible AI. It is harder to write down exactly how you will operationalize that in the next six months, and harder still to commit to revisiting it honestly when you fall short. That tension between aspiration and accountability is what gives a framework like this its actual utility.</p>
+      <p>Looking back across all five artifacts, I can see a clear arc: from understanding AI's history, to building with it responsibly, to analyzing its technical foundations, to applying judgment under pressure, to finally articulating what kind of leader I want to be as I carry all of that forward. Each artifact was a step in that progression, and this one is the synthesis. It does not complete the journey — it describes how I intend to keep going.</p>
+    </div>
+
   </div>
 </section>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <p class="section-label">get in touch</p>
